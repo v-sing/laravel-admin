@@ -7,6 +7,22 @@ use Illuminate\Support\ServiceProvider;
 class AdminServiceProvider extends ServiceProvider
 {
     /**
+     * @var array
+     */
+    protected $commands = [
+        Console\AdminCommand::class,
+        Console\MakeCommand::class,
+        Console\MenuCommand::class,
+        Console\InstallCommand::class,
+        Console\PublishCommand::class,
+        Console\UninstallCommand::class,
+        Console\ImportCommand::class,
+        Console\CreateUserCommand::class,
+        Console\ResetPasswordCommand::class,
+        Console\ExtendCommand::class,
+        Console\ExportSeedCommand::class,
+    ];
+    /**
      * @var bool
      *
      */
@@ -21,10 +37,10 @@ class AdminServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__ . '/views', 'Admin'); // 视图目录指定
         $this->publishes([
-            __DIR__.'/views' => base_path('resources/views/vendor/admin'),  // 发布视图目录到resources 下
-            __DIR__.'/config/admin.php' => config_path('admin.php'), // 发布配置文件到 laravel 的config 下
+            __DIR__ . '/views'            => base_path('resources/views/vendor/admin'),  // 发布视图目录到resources 下
+            __DIR__ . '/config/admin.php' => config_path('admin.php'), // 发布配置文件到 laravel 的config 下
         ]);
-
+        $this->commands($this->commands);
     }
 
     /**
