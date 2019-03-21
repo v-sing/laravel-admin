@@ -1,6 +1,6 @@
 <?php
 
-namespace Future\Packagetest;
+namespace Future\Admin;
 
 use Illuminate\Support\ServiceProvider;
 

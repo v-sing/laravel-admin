@@ -7,7 +7,7 @@
  * Time: 10:13
  */
 
-namespace Future\Packagetest;
+namespace Future\Admin;
 
 use Illuminate\Session\SessionManager;
 use Illuminate\Config\Repository;

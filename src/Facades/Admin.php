@@ -7,7 +7,7 @@
  * Time: 10:16
  */
 
-namespace Future\Packagetest\Facades;
+namespace Future\Admin\Facades;
 
 use  Illuminate\Support\Facades\Facade;
 
